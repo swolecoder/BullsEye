@@ -21,8 +21,8 @@ struct ContentView: View {
         VStack{
             Spacer()
             HStack {
-                Text("Put the Bulls eye as close as you can")
-                Text("\(self.target)");
+                Text("Put the Bulls eye as close as you can").foregroundColor(.white)
+                Text("\(self.target)").foregroundColor(.white)
             }
             
             Spacer()
@@ -51,6 +51,8 @@ struct ContentView: View {
                         
                     })
             }
+             .background(Image("Button"))
+            
             Spacer()
             HStack{
                 Button(action: {
@@ -62,20 +64,23 @@ struct ContentView: View {
                 }) {
                     Text("Start Over")
                 }
+                .background(Image("Button"))
                 Spacer()
-                Text("Score:")
-                Text("\(self.score)")
+                Text("Score:").foregroundColor(.white)
+                Text("\(self.score)").foregroundColor(.white)
                 Spacer()
-                Text("Round:")
-                Text("\(self.round)")
+                Text("Round:").foregroundColor(.white)
+                Text("\(self.round)").foregroundColor(.white)
                 Spacer()
                 Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
                     Text("Info")
                 }
+                .background(Image("Button"))
             }
             .padding(.bottom,20)
             
         }
+        .background(Image("Background"), alignment: .center)
     }
     
     func pointsForCurrentRound()-> (Int){
