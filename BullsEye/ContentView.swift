@@ -14,6 +14,7 @@ struct ContentView: View {
     @State var target = Int.random(in: 1...100);
     @State var score = 0;
     @State var round = 1;
+    @State var showInfo: Bool = false;
     
     
     var body: some View {
@@ -51,7 +52,7 @@ struct ContentView: View {
                         
                     })
             }
-             .background(Image("Button"))
+            .background(Image("Button"))
             
             Spacer()
             HStack{
@@ -72,10 +73,16 @@ struct ContentView: View {
                 Text("Round:").foregroundColor(.white)
                 Text("\(self.round)").foregroundColor(.white)
                 Spacer()
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+                Button(action: {
+                    self.showInfo = true;
+                }) {
                     Text("Info")
                 }
-                .background(Image("Button"))
+                .alert(isPresented: $showInfo, content: { () -> Alert in
+                    
+                    return Alert(title: Text("Bulls eye"), message: Text("Info coming soon for the Game "), dismissButton: .default(Text("Close")))
+                })
+                    .background(Image("Button"))
             }
             .padding(.bottom,20)
             
