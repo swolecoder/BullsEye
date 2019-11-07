@@ -28,9 +28,9 @@ struct ContentView: View {
             Spacer()
             HStack{
                 
-                Text("1")
+                Text("1").foregroundColor(.white)
                 Slider(value: self.$SliderValue, in: 1...100);
-                Text("100")
+                Text("100").foregroundColor(.white)
             }
             Button(action: {
                 self.alertIsVisible = true;
