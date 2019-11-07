@@ -11,6 +11,7 @@ import SwiftUI
 struct ContentView: View {
     @State var alertIsVisible:Bool = false;
     @State var SliderValue: Double = 50;
+    @State var target = Int.random(in: 1...100);
     
     var body: some View {
         
@@ -18,9 +19,7 @@ struct ContentView: View {
             Spacer()
             HStack {
                 Text("Put the Bulls eye as close as you can")
-                Text("100")
-                
-                
+                Text("\(self.target)");
             }
             
             Spacer()
