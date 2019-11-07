@@ -13,9 +13,9 @@ struct ContentView: View {
     @State var SliderValue: Double = 50;
     
     var body: some View {
-      
+        
         VStack{
-                  Spacer()
+            Spacer()
             HStack {
                 Text("Put the Bulls eye as close as you can")
                 Text("100")
@@ -23,7 +23,7 @@ struct ContentView: View {
                 
             }
             
-                Spacer()
+            Spacer()
             HStack{
                 
                 Text("1")
@@ -38,20 +38,21 @@ struct ContentView: View {
                 Text("Hit Me")
             }
             .alert(isPresented: $alertIsVisible) { () -> Alert in
-                return Alert(title: Text("Hello There"), message: Text("This is my first pop up"), dismissButton:    .default(Text("Awesone")))
+                let roundValue: Int = Int(self.SliderValue)
+                return Alert(title: Text("Hello There"), message: Text("Slider Value \(roundValue)"), dismissButton:    .default(Text("Awesone")))
             }
-                Spacer()
+            Spacer()
             HStack{
                 Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
                     Text("Start Over")
                 }
-                   Spacer()
+                Spacer()
                 Text("Score")
                 Text("999")
-                    Spacer()
+                Spacer()
                 Text("Round")
                 Text("99")
-                    Spacer()
+                Spacer()
                 Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
                     Text("Info")
                 }
