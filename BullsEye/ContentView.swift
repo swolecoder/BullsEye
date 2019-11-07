@@ -15,9 +15,20 @@ struct ContentView: View {
     var body: some View {
         
         VStack{
-            Text("Hello, Worlds!")
-                .fontWeight(.semibold)
-                .foregroundColor(Color.green)
+            HStack {
+                Text("Put the Bulls eye as close as you can")
+                Text("100")
+            
+            
+            }
+            
+            HStack{
+                
+                Text("1")
+                Slider(value: .constant(10))
+
+                  Text("100")
+            }
             Button(action: {
                 self.alertIsVisible = true;
                 
@@ -28,15 +39,15 @@ struct ContentView: View {
                 return Alert(title: Text("Hello There"), message: Text("This is my first pop up"), dismissButton:    .default(Text("Awesone")))
             }
             
-            Button(action:{
-                
-                self.alertIsVisible = true;
-            }){
-                Text("knock knock")
-            }
-            .alert(isPresented: $alertIsVisible) { () -> Alert in
-                return Alert(title: Text("WHo is there"), message: Text("blah blah "), dismissButton: .default(Text("Close")))
-            }
+//            Button(action:{
+//
+//                self.alertIsVisible = true;
+//            }){
+//                Text("knock knock")
+//            }
+//            .alert(isPresented: $alertIsVisible) { () -> Alert in
+//                return Alert(title: Text("WHo is there"), message: Text("blah blah "), dismissButton: .default(Text("Close")))
+//            }
             
         }
     }
