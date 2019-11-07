@@ -11,23 +11,25 @@ import SwiftUI
 struct ContentView: View {
     @State var alertIsVisible:Bool = false;
     
-
+    
     var body: some View {
-        
+      
         VStack{
+                  Spacer()
             HStack {
                 Text("Put the Bulls eye as close as you can")
                 Text("100")
-            
-            
+                
+                
             }
             
+                Spacer()
             HStack{
                 
                 Text("1")
                 Slider(value: .constant(10))
-
-                  Text("100")
+                
+                Text("100")
             }
             Button(action: {
                 self.alertIsVisible = true;
@@ -38,16 +40,23 @@ struct ContentView: View {
             .alert(isPresented: $alertIsVisible) { () -> Alert in
                 return Alert(title: Text("Hello There"), message: Text("This is my first pop up"), dismissButton:    .default(Text("Awesone")))
             }
-            
-//            Button(action:{
-//
-//                self.alertIsVisible = true;
-//            }){
-//                Text("knock knock")
-//            }
-//            .alert(isPresented: $alertIsVisible) { () -> Alert in
-//                return Alert(title: Text("WHo is there"), message: Text("blah blah "), dismissButton: .default(Text("Close")))
-//            }
+                Spacer()
+            HStack{
+                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+                    Text("Start Over")
+                }
+                   Spacer()
+                Text("Score")
+                Text("999")
+                    Spacer()
+                Text("Round")
+                Text("99")
+                    Spacer()
+                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+                    Text("Info")
+                }
+            }
+            .padding(.bottom,20)
             
         }
     }
