@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State var alertIsVisible:Bool = false;
-    
+    @State var SliderValue: Double = 50;
     
     var body: some View {
       
@@ -27,7 +27,7 @@ struct ContentView: View {
             HStack{
                 
                 Text("1")
-                Slider(value: .constant(10))
+                Slider(value: self.$SliderValue, in: 1...100)
                 
                 Text("100")
             }
